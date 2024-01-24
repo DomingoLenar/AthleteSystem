@@ -1,4 +1,4 @@
-package backend;
+package models;
 
 public class AthleteModel {
     private int id, age, height, weight;

@@ -1,17 +1,21 @@
-package frontend;
+package views;
+
+import controllers.FileHandlerController;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.geom.Arc2D;
 import java.io.File;
 
 public class GUI extends JFrame {
 
-    GUI() {
+    FileHandlerController controller;
+
+    public GUI() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(new FlowLayout());
+        this.controller = new FileHandlerController(this);
 
         JButton button = new JButton("Select File");
         button.addActionListener(new ActionListener() {
@@ -25,7 +29,7 @@ public class GUI extends JFrame {
 
                     if (response == JFileChooser.APPROVE_OPTION) {
                         File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
-                        System.out.println(file);
+                        controller.submitFile(file);
                     }
                 }
             }
@@ -36,8 +40,5 @@ public class GUI extends JFrame {
 
     }
 
-    public static void main(String[] args) {
-        new GUI();
-    }
 }
 
