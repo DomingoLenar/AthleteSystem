@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="views.SelectFile">
+  <grid id="27dc6" binding="mainPanel" default-binding="true" layout-manager="BorderLayout" hgap="0" vgap="0">
+    <constraints>
+      <xy x="19" y="20" width="757" height="541"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+      <foreground color="-2500135"/>
+      <preferredSize width="265" height="114"/>
+    </properties>
+    <border type="empty">
+      <size top="80" left="80" bottom="0" right="80"/>
+    </border>
+    <children>
+      <component id="2038a" class="javax.swing.JButton" binding="selectFileButton" default-binding="true">
+        <constraints border-constraint="North"/>
+        <properties>
+          <background color="-2500135"/>
+          <foreground color="-16777216"/>
+          <margin top="0" left="0" bottom="0" right="0"/>
+          <preferredSize width="101" height="50"/>
+          <text value="Select File"/>
+        </properties>
+        <clientProperties>
+          <hideActionText class="java.lang.Boolean" value="false"/>
+          <html.disable class="java.lang.Boolean" value="false"/>
+        </clientProperties>
+      </component>
+    </children>
+  </grid>
+</form>
