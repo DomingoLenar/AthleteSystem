@@ -1,19 +1,19 @@
 package controllers;
 
 import models.AthleteModel;
-import views.GUI;
+import views.ChooseFile;
 
 import java.io.File;
 
 public class FileHandlerController {
-    protected GUI gui;
+    protected ChooseFile gui;
     protected AthleteModel model;
 
     /**
      * Established a connection of views and models through controller
      * @param gui
      */
-    public FileHandlerController(GUI gui) {
+    public FileHandlerController(ChooseFile gui) {
         this.gui = gui;
         this.model = new AthleteModel();
     }
