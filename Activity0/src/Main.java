@@ -1,9 +1,16 @@
-import controllers.FileHandlerController;
-import models.AthleteModel;
-import views.GUI;
 
-public class Main {
+public class Main implements Runnable{
     public static void main(String[] args) {
-        new GUI();
+        Main obj = new Main();
+        try {
+            obj.run();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void run() {
+        new AthleteFilterInterface();
     }
 }
