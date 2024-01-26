@@ -34,6 +34,21 @@ public class FilterController {
         }
         return arr_players;
     }
+    public ArrayList<String> listOfCountries() {
+        ArrayList<String> arr_countries = new ArrayList<>();
+
+        for (int i=0; i<arr_athleteModel.size(); i++) {
+            /**
+             * if athlete model contains numerical then exclude
+             */
+//            if (arr_athleteModel.get(i).getTeam().matches(""))
+
+            if (!arr_countries.contains(arr_athleteModel.get(i).getTeam())) {
+                arr_countries.add(arr_athleteModel.get(i).getTeam());
+            }
+        }
+        return arr_countries;
+    }
     public void submitFile(File file) {
         arr_athleteModel = athleteFileHandler.readCSVFile(file.getAbsolutePath());
     }
