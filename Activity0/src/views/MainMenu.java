@@ -19,7 +19,6 @@ public class MainMenu {
     private void createUIComponents() {
         // TODO: place custom component creation code here
         M_dropdown = new JComboBox(options);
-
     }
 
     public String[] getOptions() {
