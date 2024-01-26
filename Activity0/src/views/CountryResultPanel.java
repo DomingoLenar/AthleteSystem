@@ -17,4 +17,7 @@ public class CountryResultPanel {
     public JButton getCP_backbtn() {
         return CR_bckbtn;
     }
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+    }
 }
