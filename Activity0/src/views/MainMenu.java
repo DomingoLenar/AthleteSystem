@@ -1,15 +1,15 @@
 package views;
 
 import javax.swing.*;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+
 
 public class MainMenu {
-    private JComboBox dropdown;
+    private JComboBox M_dropdown;
     private JPanel mainPanel;
+    private String options[] = {"Individual Player Information", "Country Participation", "Sports Category", "Medals"};
 
-    public JComboBox getDropdown() {
-        return dropdown;
+    public JComboBox getM_dropdown() {
+        return M_dropdown;
     }
 
     public JPanel getMainPanel() {
@@ -18,28 +18,11 @@ public class MainMenu {
 
     private void createUIComponents() {
         // TODO: place custom component creation code here
-        String options[] = {"Individual Player Information", "Team Information", "Game Participation", "Sports Performance"};
-        dropdown = new JComboBox(options);
+        M_dropdown = new JComboBox(options);
 
-        dropdown.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if (e.getStateChange() == ItemEvent.SELECTED) {
+    }
 
-                    if (e.getItem().toString().equals(options[0]))
-                        System.out.println("1");
-                    if (e.getItem().toString().equals(options[1]))
-                        System.out.println("2");
-                    if (e.getItem().toString().equals(options[2]))
-                        System.out.println("3");
-                    if (e.getItem().toString().equals(options[3]))
-                        System.out.println("4");
-                }
-//                } else if (e.getStateChange() == ItemEvent.DESELECTED) {
-//                    // Item deselected
-//                    System.out.println("Deselected Item: " + e.getItem());
-//                }
-            }
-        });
+    public String[] getOptions() {
+        return options;
     }
 }
