@@ -1,6 +1,6 @@
 package views;
 
-import controllers.FileHandlerController;
+import controllers.FilterController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -8,11 +8,10 @@ import java.io.File;
 
 public class ChooseFile extends JPanel {
 
-    FileHandlerController controller;
-
+    FilterController filterController;
     public ChooseFile() {
         this.setLayout(new FlowLayout());
-        this.controller = new FileHandlerController(this);
+        filterController = new FilterController();
     }
 
     public boolean displayJFileExplorer() {
@@ -22,12 +21,15 @@ public class ChooseFile extends JPanel {
 
         if (response == JFileChooser.APPROVE_OPTION) {
             File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
-            controller.submitFile(file);
+            filterController.submitFile(file);
             return true;
         }
 
         return false;
     }
 
+    public FilterController getFilterController() {
+        return filterController;
+    }
 }
 
