@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class AthleteFilterInterface extends JFrame {
@@ -19,6 +20,7 @@ public class AthleteFilterInterface extends JFrame {
     private final String playerInformationID = "playerInformation_id";
     private final String playerMetricID = "playerMetric_id";
     private final String countryParticipationID = "countryParticipation_id";
+    private final String countryResultID = "countryResult_id";
     private final String sportsCategoryID = "sports_id";
     private final String medalsID = "medals_id";
     private final String medalMetricsID = "medal_metrics_id";
@@ -29,6 +31,7 @@ public class AthleteFilterInterface extends JFrame {
     private AthletesPanel playerInformationPanel;
     private PlayerMetricsPanel playerMetricsPanel;
     private CountryParticipationPanel countryParticipationPanel;
+    private CountryResultPanel countryResultPanel;
     private SportsCategoryPanel sportsCategoryPanel;
     private MedalsPanel medalsPanel;
     private MedalMetricsPanel medalMetricsPanel;
@@ -82,6 +85,7 @@ public class AthleteFilterInterface extends JFrame {
         playerInformationPanel = new AthletesPanel();
         playerMetricsPanel = new PlayerMetricsPanel();
         countryParticipationPanel = new CountryParticipationPanel();
+        countryResultPanel = new CountryResultPanel();
         sportsCategoryPanel = new SportsCategoryPanel();
         medalsPanel = new MedalsPanel();
         medalMetricsPanel = new MedalMetricsPanel();
@@ -140,6 +144,17 @@ public class AthleteFilterInterface extends JFrame {
                             break;
                         }
                     }
+                }
+            }
+        });
+        ArrayList<String> CP_options = filterController.listOfCountries();
+        countryParticipationPanel.populateCP_dropdown(filterController.listOfCountries());
+        countryParticipationPanel.getCP_dropdown().addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    // TODO: logic implementation
+                    changeScreen(countryResultID);
                 }
             }
         });
@@ -216,6 +231,7 @@ public class AthleteFilterInterface extends JFrame {
         cardPanel.add(medalsID, medalsPanel.getMainPanel());
         cardPanel.add(medalMetricsID, medalMetricsPanel.getMainPanel());
         cardPanel.add(playerMetricID, playerMetricsPanel.getMainPanel());
+        cardPanel.add(countryResultID, countryResultPanel.getMainPanel());
 
     }
 }
