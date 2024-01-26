@@ -28,6 +28,7 @@ public class AthleteFilterInterface extends JFrame {
     private CountryParticipationPanel countryParticipationPanel;
     private SportsCategoryPanel sportsCategoryPanel;
     private MedalsPanel medalsPanel;
+    private NameResultPanel nameResultPanel;
 
     public AthleteFilterInterface() {
         this.selectFile = new SelectFile();
