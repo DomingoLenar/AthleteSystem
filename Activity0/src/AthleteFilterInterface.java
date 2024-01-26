@@ -199,11 +199,6 @@ public class AthleteFilterInterface extends JFrame {
         });
     }
 
-    private void displayPlayerMetricsPanel() {
-
-    }
-
-
     private void changeScreen(String screen) {
         ((CardLayout)cardPanel.getLayout()).show(cardPanel, screen);
     }
