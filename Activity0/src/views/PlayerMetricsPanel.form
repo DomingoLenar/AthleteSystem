@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="views.PlayerMetricsPanel">
+  <grid id="27dc6" binding="mainPanel" layout-manager="GridBagLayout">
+    <constraints>
+      <xy x="20" y="20" width="716" height="486"/>
+    </constraints>
+    <properties>
+      <background color="-1"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <component id="c8339" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="ID"/>
+        </properties>
+      </component>
+      <component id="6e68a" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="SPORT"/>
+        </properties>
+      </component>
+      <component id="97c10" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="COUNTRY"/>
+        </properties>
+      </component>
+      <component id="576c8" class="javax.swing.JLabel" binding="playerNameLabel">
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="20" bottom="0" right="20" weightx="0.3" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="Name"/>
+        </properties>
+      </component>
+      <component id="160ad" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="TOTAL GOLD"/>
+        </properties>
+      </component>
+      <component id="f19d" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="TOTAL SILVER"/>
+        </properties>
+      </component>
+      <component id="48820" class="javax.swing.JLabel">
+        <constraints>
+          <grid row="0" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag top="0" left="0" bottom="20" right="0" weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="TOTAL BRONZE"/>
+        </properties>
+      </component>
+      <component id="d3795" class="javax.swing.JLabel" binding="idValue">
+        <constraints>
+          <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.2" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="6797a" class="javax.swing.JLabel" binding="sportValue">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.2" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="cfafa" class="javax.swing.JLabel" binding="countryValue">
+        <constraints>
+          <grid row="1" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.2" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="84165" class="javax.swing.JLabel" binding="goldValue">
+        <constraints>
+          <grid row="1" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.1" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="477c8" class="javax.swing.JLabel" binding="silverValue">
+        <constraints>
+          <grid row="1" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.1" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="0"/>
+        </properties>
+      </component>
+      <component id="bf8d" class="javax.swing.JLabel" binding="bronzeValue">
+        <constraints>
+          <grid row="1" column="6" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.1" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <foreground color="-16777216"/>
+          <text value="0"/>
+        </properties>
+      </component>
+    </children>
+  </grid>
+</form>
