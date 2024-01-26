@@ -9,13 +9,12 @@ public class NameResultFoundPanel {
 
     private JButton NRF_bckbtn;
 
-    private JPanel getMainPanel() {
+    public JPanel getMainPanel() {
         return mainPanel;
     }
-    private JButton NRF_bckbtn() {
+    public JButton getNRF_bckbtn() {
         return NRF_bckbtn;
     }
-
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
