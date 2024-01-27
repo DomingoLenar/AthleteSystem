@@ -2,15 +2,21 @@ package views;
 
 import javax.swing.*;
 
-public class SportResultFound {
+public class SportResultPanel {
     private JPanel mainPanel;
-    private JLabel Sports;
+    private JLabel sportsLabel;
     private JButton SRF_backbutton;
-    private JLabel totalGold;
-    private JLabel totalSilver;
-    private JLabel totalBronze;
+    private JLabel sportsTotalGames;
     public JPanel getMainPanel() {
         return mainPanel;
+    }
+
+    public JLabel getSportsLabel() {
+        return sportsLabel;
+    }
+
+    public JLabel getSportsTotalGames() {
+        return sportsTotalGames;
     }
 
     public JButton getSRF_backbutton() {

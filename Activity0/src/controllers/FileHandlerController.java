@@ -5,7 +5,7 @@ import models.AthleteFilter;
 import views.ChooseFile;
 
 import java.io.File;
-
+@Deprecated
 public class FileHandlerController {
 //    protected ChooseFile gui;
 //    FilterController filterController;

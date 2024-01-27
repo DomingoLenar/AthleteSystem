@@ -1,11 +1,10 @@
-package backend;
+package models;
 
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class AthleteStatistics {
-
 
     /**
      *
@@ -39,6 +38,7 @@ public class AthleteStatistics {
         return statistics;
     }
 
+    //Should filter the List first using AthleteFilter
     public ArrayList<Long> teamStatistics(List<AthleteModel> filteredList){
         ArrayList<Long> statistics = new ArrayList<>();
 

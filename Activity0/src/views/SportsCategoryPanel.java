@@ -1,6 +1,7 @@
 package views;
 
 import javax.swing.*;
+import java.util.ArrayList;
 
 public class SportsCategoryPanel {
     private JPanel mainPanel;
@@ -13,5 +14,20 @@ public class SportsCategoryPanel {
 
     public JButton getSC_backbtn() {
         return SC_backbtn;
+    }
+
+    private void createUIComponents() {
+        // TODO: place custom component creation code here
+        SC_dropdown = new JComboBox();
+    }
+
+    public JComboBox getSC_dropdown() {
+        return SC_dropdown;
+    }
+
+    public void populateSC_dropdown(ArrayList<String> sports) {
+        for (String sport : sports) {
+            SC_dropdown.addItem(sport);
+        }
     }
 }

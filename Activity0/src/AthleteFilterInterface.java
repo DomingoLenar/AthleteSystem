@@ -1,5 +1,4 @@
 import controllers.FilterController;
-import models.AthleteModel;
 import views.*;
 
 import javax.swing.*;
@@ -22,6 +21,7 @@ public class AthleteFilterInterface extends JFrame {
     private final String countryParticipationID = "countryParticipation_id";
     private final String countryResultID = "countryResult_id";
     private final String sportsCategoryID = "sports_id";
+    private final String sportsResultID = "sportResult_id";
     private final String medalsID = "medals_id";
     private final String medalMetricsID = "medal_metrics_id";
     private JPanel cardPanel;
@@ -33,6 +33,7 @@ public class AthleteFilterInterface extends JFrame {
     private CountryParticipationPanel countryParticipationPanel;
     private CountryResultPanel countryResultPanel;
     private SportsCategoryPanel sportsCategoryPanel;
+    private SportResultPanel sportResultPanel;
     private MedalsPanel medalsPanel;
     private MedalMetricsPanel medalMetricsPanel;
 
@@ -87,6 +88,7 @@ public class AthleteFilterInterface extends JFrame {
         countryParticipationPanel = new CountryParticipationPanel();
         countryResultPanel = new CountryResultPanel();
         sportsCategoryPanel = new SportsCategoryPanel();
+        sportResultPanel = new SportResultPanel();
         medalsPanel = new MedalsPanel();
         medalMetricsPanel = new MedalMetricsPanel();
     }
@@ -106,10 +108,6 @@ public class AthleteFilterInterface extends JFrame {
                     if (e.getItem().toString().equals(mainMenuOptions[3]))
                         changeScreen(medalsID);
                 }
-//                } else if (e.getStateChange() == ItemEvent.DESELECTED) {
-//                    // Item deselected
-//                    System.out.println("Deselected Item: " + e.getItem());
-//                }
             }
         });
         String[] PI_options = filterController.listOfPlayers();
@@ -127,6 +125,7 @@ public class AthleteFilterInterface extends JFrame {
                             playerMetricsPanel.getCountryValue().setText(temp_arr[6]);
 
                             if (!Objects.equals(temp_arr[10], "NA")){
+//                                filterController.playerStatistics(temp_arr[5]);
                                 switch (temp_arr[10]){
                                     case "Gold":
                                         playerMetricsPanel.getGoldValue().setText(String.valueOf(1));
@@ -138,6 +137,10 @@ public class AthleteFilterInterface extends JFrame {
                                         playerMetricsPanel.getBronzeValue().setText(String.valueOf(1));
                                         break;
                                 }
+                            } else {
+                                playerMetricsPanel.getGoldValue().setText("NA");
+                                playerMetricsPanel.getSilverValue().setText("NA");
+                                playerMetricsPanel.getBronzeValue().setText("NA");
                             }
 
                             changeScreen(playerMetricID);
@@ -153,8 +156,32 @@ public class AthleteFilterInterface extends JFrame {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
-                    // TODO: logic implementation
+                    for (String option : CP_options) {
+                        if (e.getItem().toString().equals(option)) {
+                            countryResultPanel.getCountryLabel().setText(option.replaceAll("\"", ""));
+                            long countryParticipation = filterController.countryParticipation(option);
+                            countryResultPanel.getCountryValue().setText(String.valueOf(countryParticipation));
+                            break;
+                        }
+                    }
                     changeScreen(countryResultID);
+                }
+            }
+        });
+        ArrayList<String> SC_options = filterController.listOfSports();
+        sportsCategoryPanel.populateSC_dropdown(filterController.listOfSports());
+        sportsCategoryPanel.getSC_dropdown().addItemListener(new ItemListener() {
+            @Override
+            public void itemStateChanged(ItemEvent e) {
+                if (e.getStateChange() == ItemEvent.SELECTED) {
+                    for (String option : SC_options) {
+                        if (e.getItem().toString().equals(option)){
+                            sportResultPanel.getSportsLabel().setText(option.replaceAll("\"", ""));
+                            long totalGames = filterController.totalSport(option);
+                            sportResultPanel.getSportsTotalGames().setText(String.valueOf(totalGames));
+                        }
+                    }
+                    changeScreen(sportsResultID);
                 }
             }
         });
@@ -232,6 +259,6 @@ public class AthleteFilterInterface extends JFrame {
         cardPanel.add(medalMetricsID, medalMetricsPanel.getMainPanel());
         cardPanel.add(playerMetricID, playerMetricsPanel.getMainPanel());
         cardPanel.add(countryResultID, countryResultPanel.getMainPanel());
-
+        cardPanel.add(sportsResultID, sportResultPanel.getMainPanel());
     }
 }
