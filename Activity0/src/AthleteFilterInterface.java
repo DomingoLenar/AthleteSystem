@@ -239,6 +239,30 @@ public class AthleteFilterInterface extends JFrame {
                 changeScreen(mainID);
             }
         });
+        playerMetricsPanel.getPM_backbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changeScreen(playerInformationID);
+            }
+        });
+        countryResultPanel.getCR_backbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changeScreen(countryParticipationID);
+            }
+        });
+        sportResultPanel.getSR_backbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changeScreen(sportsCategoryID);
+            }
+        });
+        medalMetricsPanel.getMM_backbtn().addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                changeScreen(medalsID);
+            }
+        });
     }
 
     private void changeScreen(String screen) {
