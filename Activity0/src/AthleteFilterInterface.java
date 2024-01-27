@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class AthleteFilterInterface extends JFrame {
@@ -110,38 +111,42 @@ public class AthleteFilterInterface extends JFrame {
                 }
             }
         });
-        String[] PI_options = filterController.listOfPlayers();
-        playerInformationPanel.populatePI_dropdown(filterController.listOfPlayers());
+//        String[] PI_options = filterController.listOfPlayers();
+        List<String> PI_options = filterController.displayPlayerList();
+        playerInformationPanel.populatePI_dropdown(PI_options);
         playerInformationPanel.getPI_dropdown().addItemListener(new ItemListener() {
             @Override
             public void itemStateChanged(ItemEvent e) {
                 if (e.getStateChange() == ItemEvent.SELECTED) {
                     for (String option : PI_options) {
                         if (e.getItem().toString().equals(option)){
-                            String[] temp_arr = option.split(",");
-                            playerMetricsPanel.getIdValue().setText(temp_arr[0]);
-                            playerMetricsPanel.getPlayerNameLabel().setText(temp_arr[5]);
-                            playerMetricsPanel.getSportValue().setText(temp_arr[9]);
-                            playerMetricsPanel.getCountryValue().setText(temp_arr[6]);
+//                            playerInformationPanel.getAthleteLabel().setText("There are  several athletes under this name, please choose the athlete below specifically");
+//                            List<String> listOfSimilarfilterController.submitName(option);
+//                            playerInformationPanel.populatePI_dropdown();
 
-                            if (!Objects.equals(temp_arr[10], "NA")){
-//                                filterController.playerStatistics(temp_arr[5]);
-                                switch (temp_arr[10]){
-                                    case "Gold":
-                                        playerMetricsPanel.getGoldValue().setText(String.valueOf(1));
-                                        break;
-                                    case "Silver":
-                                        playerMetricsPanel.getSilverValue().setText(String.valueOf(1));
-                                        break;
-                                    case "Bronze":
-                                        playerMetricsPanel.getBronzeValue().setText(String.valueOf(1));
-                                        break;
-                                }
-                            } else {
-                                playerMetricsPanel.getGoldValue().setText("NA");
-                                playerMetricsPanel.getSilverValue().setText("NA");
-                                playerMetricsPanel.getBronzeValue().setText("NA");
-                            }
+//                            String[] temp_arr = option.split(",");
+//                            playerMetricsPanel.getIdValue().setText(temp_arr[0]);
+//                            playerMetricsPanel.getPlayerNameLabel().setText(temp_arr[5]);
+//                            playerMetricsPanel.getSportValue().setText(temp_arr[9]);
+//                            playerMetricsPanel.getCountryValue().setText(temp_arr[6]);
+//
+//                            if (!Objects.equals(temp_arr[10], "NA")){
+//                                switch (temp_arr[10]){
+//                                    case "Gold":
+//                                        playerMetricsPanel.getGoldValue().setText(String.valueOf(1));
+//                                        break;
+//                                    case "Silver":
+//                                        playerMetricsPanel.getSilverValue().setText(String.valueOf(1));
+//                                        break;
+//                                    case "Bronze":
+//                                        playerMetricsPanel.getBronzeValue().setText(String.valueOf(1));
+//                                        break;
+//                                }
+//                            } else {
+//                                playerMetricsPanel.getGoldValue().setText("NA");
+//                                playerMetricsPanel.getSilverValue().setText("NA");
+//                                playerMetricsPanel.getBronzeValue().setText("NA");
+//                            }
 
                             changeScreen(playerMetricID);
                             break;

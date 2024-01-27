@@ -29,15 +29,33 @@ public class FilterController {
         return athleteFilter.filterByMedal(arr_athleteModel, "\""+medalType+"\"").size();
     }
 
-    public String[] listOfPlayers() {
-        String[] arr_players = new String[arr_athleteModel.size()];
+    public List<String> displayPlayerList() {
+        return athleteFilter.listOfPlayers(arr_athleteModel);
+    }
+@Deprecated
+    public ArrayList<String> listOfPlayers() { // longer execution time alternative is the listOfPlayers in AthleteFilter
+        ArrayList<String> arr_players = new ArrayList<>();
         AthleteModel athleteModel;
         for (int i=0; i< arr_athleteModel.size(); i++) {
             athleteModel = arr_athleteModel.get(i);
-            arr_players[i] = athleteModel.toString();
+            if (!arr_players.contains(athleteModel.getName())) {
+                arr_players.add(athleteModel.getName());
+            }
+            System.out.println(i);
         }
-
         return arr_players;
+
+/**
+ * commented code lots of duplication
+ */
+//        String[] arr_players = new String[arr_athleteModel.size()];
+//        AthleteModel athleteModel;
+//        for (int i=0; i< arr_athleteModel.size(); i++) {
+//            athleteModel = arr_athleteModel.get(i);
+//            arr_players[i] = athleteModel.toString();
+//        }
+//
+//        return arr_players;
     }
     public ArrayList<String> listOfCountries() {
         ArrayList<String> arr_countries = new ArrayList<>();
@@ -86,6 +104,10 @@ public class FilterController {
     public void submitFile(File file) {
         arr_athleteModel = athleteFileHandler.readCSVFile(file.getAbsolutePath());
     }
+
+//    public List<String> submitName(String name) {
+//        List<AthleteModel> athleteModelList = athleteFilter.filterByName(arr_athleteModel, name);
+//    }
 
 //    public void playerStatistics(String name) {
 //        List<AthleteModel> filteredByName = athleteFilter.filterByName(arr_athleteModel, name);

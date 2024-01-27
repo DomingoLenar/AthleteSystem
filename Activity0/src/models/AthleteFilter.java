@@ -6,6 +6,13 @@ import java.util.stream.Collectors;
 
 public class AthleteFilter {
 
+    public List<String> listOfPlayers(ArrayList<AthleteModel> arrayList) {
+        List<String> filtered = null;
+        filtered = arrayList.stream()
+                .map(AthleteModel::getName).distinct()
+                .collect(Collectors.toList());
+        return filtered;
+    }
     /**
      * This method filters an array list of AthleteModel by the athletes name
      * @param arrayList     ArrayList of AthleteModel
@@ -14,7 +21,7 @@ public class AthleteFilter {
      */
     public List<AthleteModel> filterByName(ArrayList<AthleteModel> arrayList, String playerName){
         List<AthleteModel> filtered = null;
-        filtered = arrayList.stream()
+                filtered = arrayList.stream()
                 .filter(athleteModel -> athleteModel.getName().equals(playerName))
                 .collect(Collectors.toList());
 
