@@ -5,7 +5,7 @@ import javax.swing.*;
 public class SportResultPanel {
     private JPanel mainPanel;
     private JLabel sportsLabel;
-    private JButton SRF_backbutton;
+    private JButton SR_backbtn;
     private JLabel sportsTotalGames;
     public JPanel getMainPanel() {
         return mainPanel;
@@ -18,11 +18,11 @@ public class SportResultPanel {
     public JLabel getSportsTotalGames() {
         return sportsTotalGames;
     }
-
-    public JButton getSRF_backbutton() {
-        return SRF_backbutton;
-    }
     private void createUIComponents() {
         // TODO: place custom component creation code here
+    }
+
+    public JButton getSR_backbtn() {
+        return SR_backbtn;
     }
 }

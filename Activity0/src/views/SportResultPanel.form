@@ -42,13 +42,13 @@
           <text value="Null"/>
         </properties>
       </component>
-      <component id="d2dfc" class="javax.swing.JButton" binding="SRF_backbutton">
+      <component id="d2dfc" class="javax.swing.JButton" binding="SR_backbtn">
         <constraints>
           <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
           <gridbag top="0" left="20" bottom="0" right="20" weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
-          <background color="-1"/>
+          <background color="-2500135"/>
           <foreground color="-16777216"/>
           <text value="Back"/>
         </properties>
