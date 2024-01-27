@@ -11,6 +11,11 @@ public class PlayerMetricsPanel {
     private JLabel silverValue;
     private JLabel bronzeValue;
     private JPanel mainPanel;
+    private JButton PM_backbtn;
+
+    public JButton getPM_backbtn() {
+        return PM_backbtn;
+    }
 
     public JPanel getMainPanel() {
         return mainPanel;
